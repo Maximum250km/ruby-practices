@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Bookers Detail</title>
+</head>
+<body>
+
+<h1>Users</h1>
+
+<%= attachment_image_tag @user, :image, :fill, 60, 60 %> 
+<h2>User Profile</h2>
+<%= @user.name%>
+<h2>Introduction</h2>
+<%= @user.introduction %>
+
+<%= link_to "edit", edit_user_path(@user.id) %>
+
+ <table>
+   <thead>
+   	<tr>
+ 		<th>title</th>
+ 		<th>body</th>
+    </tr>
+</thead>
+
+ <tbody>
+
+	  <tr>
+	  <% @book.each do |book| %>
+    <td><%= book.title %></td>
+    <td><%= book.body %></td>
+ 	  </tr>
+ 	  <% end %>
+ </tbody>
+</table>

@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>User Info</title>
+</head>
+<body>
+
+<table>
+   <thead>
+   	<tr>
+ 		<th>image</th>
+ 		<th>user</th>
+    </tr>
+</thead>
+
+ <tbody>
+ 	<% @user_all.each do |user| %>
+	  <tr>
+    <td><%= user.profile_image_id %></td>
+    <td><%= user.name %></td>
+      <td><%= link_to "show", user_path(user.id) %></td>
+ 	  </tr>
+     <% end %>
+ </tbody>
+</table>
